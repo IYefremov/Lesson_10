@@ -95,7 +95,8 @@ public class TestPage {
                 .build();
 
         AccountPage accountPage = new AccountPage(driver);
-        // Fill in the registration form
+
+        //Fill in the registration form
         accountPage.fillInGender(account.getGender());
         accountPage.fillInCustomerFirstName(account.getFirstCustomerName());
         accountPage.fillInCustomerLastName(account.getLastCustomerName());
@@ -121,6 +122,7 @@ public class TestPage {
 
     @AfterTest
     public void cleanup() {
+        driver.manage().deleteAllCookies();
         driver.close();
     }
 }
